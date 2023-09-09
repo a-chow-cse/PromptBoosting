@@ -1,0 +1,2 @@
+{'objective': 'multi:softmax', 'num_class': 6, 'booster': 'gbtree', 'eta': 0.1, 'gamma': 0, 'max_depth': 2, 'subsample': 0.5, 'sampling_method': 'uniform', 'tree_method': 'auto', 'lambda': 0.01}valid_acc : 0.65625, train_acc : 1.0, test_acc : 0.226 
+{'objective': 'multi:softmax', 'num_class': 6, 'booster': 'gbtree', 'eta': 0.1, 'gamma': 0, 'max_depth': 2, 'subsample': 0.5, 'sampling_method': 'uniform', 'tree_method': 'auto', 'lambda': 0.01}valid_acc : 0.6979166666666666, train_acc : 1.0, test_acc : 0.226 

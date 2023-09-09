@@ -12,25 +12,26 @@ In this work we propose PromptBoosting, a query-efficient procedure for building
 
 
 ## Requirements
-The dependency packages can be found in `requirements.txt` file. One can use `pip install -r requirements.txt` to configure the environment. We use python 3.8 to run the experiments.
+Run the following:
+
+```
+conda create -n pb python=3.8 -y
+conda activate pb
+pip install -r requirements.txt
+pip install xgboost
+
+```
 
 ## Prepare the Data
-Similar to our baselines (DART, BBT, RLPrompt), we use the same few-shot split data from [LM-BFF](https://arxiv.org/pdf/2012.15723.pdf). One can directly download the data from the official github repository of LM-BFF([here](https://github.com/princeton-nlp/LM-BFF)).
-Or you can directly download it from [here](https://drive.google.com/file/d/1GKzx-NqWovGB8V2KO3Qmw0yufqTgf0X1/view?usp=sharing) and unzip it. The directory should looks like:
+Directly download it from [here](https://drive.google.com/file/d/1GKzx-NqWovGB8V2KO3Qmw0yufqTgf0X1/view?usp=sharing) and unzip it. 
 ```
-prompt_boosting/
-    datasets/
-        original/
-            agnews/
-            MNLI/
-            mr/
-            ...
-    scripts/
-    src/
-    templates/
+unzip datasets.zip -d /local/scratch/chowdhury.150/
 ```
 
 #### 1. Generating few-shot splits
+For trec:
+`python scripts/generate_k_shot_data.py --data_dir /local/scratch/chowdhury.150/datasets/original --output_dir datasets --task trec`
+
 To generate the few-shot data, use the following command:
 ```{sh}
 python scripts/generate_k_shot_data.py --data_dir datasets/original --output_dir datasets --task {dataset_name}
@@ -73,7 +74,7 @@ python scripts/pre_compute_testset.py --dataset sst --model roberta --use_part_t
 ### 2. Main experiments
 To run the codes, use the following command:
 ```{sh}
-python ensemble_training.py --adaboost_weak_cls 200 --dataset trec --model roberta --label_set_size 3 --change_template --use_part_templates --start_idx 0 --end_idx 10 --sort_dataset --fewshot --fewshot_k 16 --fewshot_seed 13
+python ensemble_training_proposal.py --adaboost_weak_cls 200 --dataset trec --model roberta --label_set_size 5 --change_template --use_part_templates --start_idx 0 --end_idx 10 --sort_dataset --fewshot --fewshot_k 16 --fewshot_seed 100 --algorithm xgboost
 ```
 Explanations on the parameters:
 
@@ -95,7 +96,7 @@ Explanations on the parameters:
 
 `fewshot_k`: by default you should set it to 16.
 
-`fewshot_seed`: random seed for generating few-shot splits. choices include [12, 21, 42, 87, 100]
+`fewshot_seed`: random seed for generating few-shot splits. choices include (choose from 100, 13, 21, 42, 87)
 
 `use_wandb`: you can use WANDB to log the training process by using `--use_wandb`
 

@@ -1,0 +1,11 @@
+C : 0.001 , tol : 0.0001 , max_iter : 100 , valid_acc : 0.22916666666666666, train_acc : 0.21875, test_acc : 0.218 
+C : 0.001 , tol : 1e-05 , max_iter : 1000 , valid_acc : 0.23958333333333334, train_acc : 0.20833333333333334, test_acc : 0.214 
+C : 0.01 , tol : 0.0001 , max_iter : 100 , valid_acc : 0.2604166666666667, train_acc : 0.20833333333333334, test_acc : 0.278 
+C : 0.01 , tol : 1e-05 , max_iter : 100 , valid_acc : 0.2708333333333333, train_acc : 0.4375, test_acc : 0.292 
+C : 0.01 , tol : 1e-05 , max_iter : 1000 , valid_acc : 0.3020833333333333, train_acc : 0.3333333333333333, test_acc : 0.212 
+C : 0.01 , tol : 1e-06 , max_iter : 100 , valid_acc : 0.5416666666666666, train_acc : 0.6354166666666666, test_acc : 0.514 
+C : 0.01 , tol : 1e-06 , max_iter : 10000 , valid_acc : 0.5625, train_acc : 0.6666666666666666, test_acc : 0.548 
+C : 0.1 , tol : 0.0001 , max_iter : 100 , valid_acc : 0.7395833333333334, train_acc : 0.9895833333333334, test_acc : 0.778 
+C : 0.1 , tol : 0.0001 , max_iter : 1000 , valid_acc : 0.75, train_acc : 0.9895833333333334, test_acc : 0.782 
+C : 0.1 , tol : 0.0001 , max_iter : 10000 , valid_acc : 0.7604166666666666, train_acc : 0.9895833333333334, test_acc : 0.778 
+C : 1000 , tol : 0.0001 , max_iter : 100 , valid_acc : 0.7708333333333334, train_acc : 1.0, test_acc : 0.77 
